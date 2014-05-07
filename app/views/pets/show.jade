@@ -1,0 +1,12 @@
+extends ../shared/template
+
+block content
+  header
+    h1 Pet Factory
+
+  .pet(style='background-image: url(/img/#{pet.photo});')
+    .name
+      a(href='/pets/#{pet._id}')= pet.name
+    .species species: #{pet.species}
+    .gender  gender: #{pet.gender}
+    .age age: #{pet.age}

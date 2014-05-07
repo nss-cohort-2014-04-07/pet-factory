@@ -1,0 +1,17 @@
+extends ../shared/template
+
+block content
+  header
+    h1 Pet Factory
+
+  form(method='POST', action='/pets')
+    input(name='name', type='text', placeholder='name')
+    input(name='age', type='text', placeholder='age')
+    select(name='gender')
+      option Male
+      option Female
+    select(name='species')
+      option Dog
+      option Mouse
+      option Kangaroo
+    button Add

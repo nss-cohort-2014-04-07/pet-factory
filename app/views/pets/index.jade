@@ -1,0 +1,20 @@
+extends ../shared/template
+
+block content
+  header
+    h1 Pet Factory
+
+  #controls
+    a.button.button-3d-highlight.button-circle(href='/pets/new') New Pet
+
+  #pets
+    each pet in pets
+      .pet(style='background-image: url(/img/#{pet.photo});')
+        .delete
+          form(action='/pets/#{pet._id}/delete', method='POST')
+            button Delete
+        .name
+          a(href='/pets/#{pet._id}')= pet.name
+        .species species: #{pet.species}
+        .gender  gender: #{pet.gender}
+        .age age: #{pet.age}
